@@ -1,0 +1,4 @@
+nombre;valorAlumbradoPublico;valorAgua;impuestoSueloMensual;RutaImagen;RutaImagen2
+Residencial;50;50;50;imagen/houses/1.png;imagen/houses/4.png
+Comercial;100,100,90;imagen/Commercial/commercial1.jpg;imagen/Commercial/tienda-de-animales1.png
+Industrial;150;150;70;imagen/industry/industry3.png;imagen/industry/industry2.png
