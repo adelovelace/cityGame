@@ -15,8 +15,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        primaryStage.setTitle("Mi SimulacionCiudad");
-        primaryStage.setScene(new Scene(new SimulacionCiudad().getRoot(),1300,700));
+        primaryStage.setTitle("Mi SimulationCity");
+        primaryStage.setScene(new Scene(new SimulationCity().getRoot(),1300,700));
 
         primaryStage.show();
 
