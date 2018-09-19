@@ -91,7 +91,7 @@ public class SimulationCity {
                 final int indexRow = i;
                 final int indexColumn = j;
                 imageStackPane.getChildren().add(grassGrid);
-                imageStackPane.setOnMouseClicked(event -> cellAction(indexRow,indexColumn, this.imageStackPane));
+                imageStackPane.setOnMouseClicked(event -> cellAction(indexRow,indexColumn));
                 cityGrid.add(imageStackPane,j,i);
 
             }
@@ -112,15 +112,15 @@ public class SimulationCity {
         return root;
     }
 
-    public void cellAction(int row, int column, StackPane imageStackPane){
+    public void cellAction(int row, int column){
 
         System.out.println("Action: " + row + " , " + column);
 
         if(panelRight.getChildren().isEmpty()){
 
             cellService();
-
-            saveButton.setOnAction(event ->addingService(row,column, imageStackPane ));
+            System.out.println("Antes del acttion " + Integer.toString(row) + " = " + Integer.toString(column));
+            saveButton.setOnAction(event ->addingService(row,column ));
 
             panelRight.setPadding(new Insets(5,10,5,0));
             panelRight.setSpacing(20);
@@ -134,6 +134,7 @@ public class SimulationCity {
             typeserviceBox.getChildren().clear();
 
             cellService();
+            saveButton.setOnAction(event ->addingService(row,column ));
 
 
             panelRight.setPadding(new Insets(5,10,5,0));
@@ -186,18 +187,16 @@ public class SimulationCity {
 
     }
 
-    public void addingService(int row, int column, StackPane imageStackPane ){
+    public void addingService(int row, int column){
 
-        typeServiceImage.setFitWidth(25);
-        typeServiceImage.setFitWidth(25);
+        typeServiceImage.setFitWidth(10);
+        typeServiceImage.setFitWidth(10);
 
-        imageStackPane.getChildren().add(typeServiceImage);
-        cityGrid.add(imageStackPane,column,row);
+        Node node = (StackPane) getNodeByRowColumnIndex(row,column, cityGrid);
+        ((StackPane) node).getChildren().add(typeServiceImage);
 
-
-//        StackPane stackPane = (StackPane) getNodeByRowColumnIndex(row,column,cityGrid);
-//        stackPane.getChildren().add(typeServiceImage);
-//
+        cityGrid.getChildren().remove(getNodeByRowColumnIndex(row, column, cityGrid));
+        cityGrid.add(node,column,row);
 
 
         System.out.println("here");

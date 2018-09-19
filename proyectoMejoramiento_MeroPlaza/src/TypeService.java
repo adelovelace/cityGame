@@ -12,7 +12,6 @@ public class TypeService {
 
     TypeService(){
 
-
         services = new ArrayList<>();
         serviceMap = new TreeMap<>();
 
@@ -44,7 +43,7 @@ public class TypeService {
 
         try{
 
-            String pathFile = "/Users/andreameroplaza/Documents/POO/App/proyectoMejoramiento_MeroPlaza/src/archivos/servicios.txt";
+            String pathFile = "C:\\Users\\Mario\\Documents\\POO\\cityGame\\proyectoMejoramiento_MeroPlaza\\src\\archivos\\servicios.txt";
             File file = new File(pathFile);
             BufferedReader br = new BufferedReader(new FileReader(file));
 

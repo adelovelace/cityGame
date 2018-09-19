@@ -30,7 +30,7 @@ public class TypeConstruction {
 
         try{
 
-            String pathFile = "/Users/andreameroplaza/Documents/POO/App/proyectoMejoramiento_MeroPlaza/src/archivos/tipoConstruccion.txt";
+            String pathFile = "C:\\Users\\Mario\\Documents\\POO\\cityGame\\proyectoMejoramiento_MeroPlaza\\src\\archivos\\tipoConstruccion.txt";
             File file = new File(pathFile);
             BufferedReader br = new BufferedReader(new FileReader(file));
 
